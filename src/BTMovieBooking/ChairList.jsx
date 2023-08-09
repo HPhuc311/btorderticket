@@ -10,7 +10,7 @@ const ChairList = ({data}) => {
                      <p  style={{width: 30}}>{hangGhe.hang}</p>
                         {
                             hangGhe.danhSachGhe.map((ghe) => {
-                                return <Chair key={ghe.soghe} ghe={ghe}></Chair>
+                                return <Chair key={ghe.soGhe} ghe={ghe}></Chair>
                             })
                         }
                 </div>
