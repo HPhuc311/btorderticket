@@ -12,4 +12,12 @@
         color: white;
         transition: all .3s ease-in-out;
     }
+    
+    &.booking{
+        background-color: red;
+        color: white;
+        border: transparent;
+
+    }
 }
+
