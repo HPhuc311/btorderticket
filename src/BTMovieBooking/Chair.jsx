@@ -8,12 +8,14 @@ import cn from 'classnames'
 const Chair = ({ghe}) => {
   const dispatch = useDispatch()
 
-  const {chairBookings} = useSelector((state) =>state.baiTapMovieBooking)
+  const {chairBookings,chairBookeds} = useSelector((state) =>state.baiTapMovieBooking)
   // console.log('chairBookings', chairBookings)
 
 
   return (
-    <div key={ghe.soghe} className={cn('Chair mt-3', {booking: chairBookings.find(chair => chair.soGhe === ghe.soGhe)})} onClick={() => {
+    <div key={ghe.soghe} className={cn('Chair mt-3', 
+    {booking: chairBookings.find(chair => chair.soGhe === ghe.soGhe),
+    booked: chairBookeds.find(chair => chair.soGhe === ghe.soGhe)})} onClick={() => {
       dispatch(baiTapMovieBookingActions.setChairBooking(ghe))
     }}>{ghe.soGhe}</div>
   )

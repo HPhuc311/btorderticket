@@ -19,5 +19,13 @@
         border: transparent;
 
     }
+
+    &.booked{
+        background-color: gray;
+        color: white;
+        border: transparent;
+        // tắt tất cả các sự kiện 
+        pointer-events: none;
+    }
 }
 

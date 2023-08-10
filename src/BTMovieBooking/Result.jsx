@@ -1,7 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { baiTapMovieBookingActions } from '../Store/baiTapMovieBooking/slice'
 
 const Result = () => {
+    const dispatch = useDispatch()
     const {chairBookings} = useSelector(state => state.baiTapMovieBooking)
     console.log('chairBookings', chairBookings)
 
@@ -37,7 +39,9 @@ const Result = () => {
                             <tr key={chair.soGhe}>
                                 <td className='text-start'>{chair.soGhe}</td>
                                 <td>{chair.gia}</td>
-                                <td className='text-danger font-bold fs-4'> X</td>
+                                <td className='text-danger fw-bold fs-4' style={{cursor: 'pointer'}} onClick={() => {
+                                    dispatch(baiTapMovieBookingActions.setChairBooking(chair))
+                                }}> X</td>
                             </tr>
                         ))}
                     <tr>
@@ -53,7 +57,9 @@ const Result = () => {
                     </tr>
                 </tbody>
             </table>
-            <button className='btn btn-success'>Thanh toán</button>
+            <button className='btn btn-success mt-3' onClick={() => {
+                dispatch(baiTapMovieBookingActions.setChairBookeds())
+            }}>Thanh toán</button>
         </div>
     )
 }
