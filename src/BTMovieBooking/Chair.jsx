@@ -5,7 +5,7 @@ import { baiTapMovieBookingActions } from '../Store/baiTapMovieBooking/slice'
 import cn from 'classnames'
 
 
-const Chair = ({ghe}) => {
+const Chair = ({ghe, className}) => {
   const dispatch = useDispatch()
 
   const {chairBookings,chairBookeds} = useSelector((state) =>state.baiTapMovieBooking)
@@ -13,7 +13,7 @@ const Chair = ({ghe}) => {
 
 
   return (
-    <div key={ghe.soghe} className={cn('Chair mt-3', 
+    <div key={ghe.soghe} className={cn('Chair mt-3', className,
     {booking: chairBookings.find(chair => chair.soGhe === ghe.soGhe),
     booked: chairBookeds.find(chair => chair.soGhe === ghe.soGhe)})} onClick={() => {
       dispatch(baiTapMovieBookingActions.setChairBooking(ghe))
