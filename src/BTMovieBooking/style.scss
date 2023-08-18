@@ -1,10 +1,20 @@
+.App{
+    background-image: url(../../public/img/bg-orderTicket.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding-top: 20px;
+}
+
 .Chair{
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #ffb100;
+    background-color: beige;
     border-radius: 6px ;
     &:hover{
         cursor: pointer;
@@ -30,7 +40,9 @@
 
     &.disabled{
         border: transparent;
+        background-color: transparent;
         pointer-events: none;
+        color: yellow;
     }
 }
 

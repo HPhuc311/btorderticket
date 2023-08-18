@@ -6,7 +6,7 @@ import Result from './Result'
 
 const BTMovieBooking = () => {
   return (
-    <div className='container mt-5'>
+    <div className='container'>
         <div className="row">
             <div className="col-8">
                 <div className="p-2 fs-4 bg-dark text-white text-center mb-3">Screen</div>
