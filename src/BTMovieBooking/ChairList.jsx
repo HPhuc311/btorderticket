@@ -8,7 +8,7 @@ const ChairList = ({data}) => {
         {
             data.map((hangGhe) => {
                 return <div key={hangGhe.hang} className={cn('d-flex gap-3')} style={{justifyContent: 'center', alignItems: 'center', }}>
-                     <p  style={{width: 30, color: 'yellow'}}>{hangGhe.hang}</p>
+                     <p  style={{width: 30, color: 'yellow', fontSize: '20px'}}>{hangGhe.hang}</p>
                         {
                             hangGhe.danhSachGhe.map((ghe) => {
                                 return <Chair className={cn({disabled: !hangGhe.hang})} key={ghe.soGhe} ghe={ghe}></Chair>
